@@ -1,8 +1,3 @@
-//ESTOU DIZENDO QUE UTILIZAREI COMANDOS CYPRESS
-/// <reference types="Cypress" />
-
-const { select } = require("async")
-
 //DESCRIBE = SUÍTE DE TESTE
 describe('Central de Atendimento ao Cliente TAT', function() {
     
@@ -41,11 +36,10 @@ describe('Central de Atendimento ao Cliente TAT', function() {
 
     })
 
-    it('exibe mensagem de erro ao enviar formulário com e-mail inválido', function(){
+    it('exibe mensagem de erro ao enviar formulário com e-mail em branco', function(){
 
         cy.get('#firstName').type('Usuário')
         cy.get('#lastName').type('Teste')
-        cy.get('#email').type('teste!teste.com')
 //DELAY = INSERE UMA DEMORA AO EXECUTAR TAL AÇÃO
         cy.get('#open-text-area').type('Mensagem teste, tksssssssssssss!',{delay: 0})
 
